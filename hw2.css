@@ -1,0 +1,155 @@
+html{
+    background: linear-gradient(0deg, #EEECD6 60%, #FAF9EF 60%);
+    font-family: "Verdana", Geneva, sans-serif;
+    font-size: 90%;
+}
+
+body {
+
+    margin-right: 250px;
+    margin-left: 300px;
+}
+header {
+    display: grid;
+    margin-top: 0px;
+    height: 145px;
+    grid-template-columns: 1fr 1fr;
+
+}
+nav {
+    color: #EEECD7;
+    background-color: #660032;
+    grid-column: 1 / 9;
+    height: 30px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+}
+article {
+    background-color: #EEECD6;
+}
+
+footer {
+    background-color: #EEECD7;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-size: 70%;
+}
+
+div#content {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+img#logo{
+    padding: 5px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    display: none;
+}
+.dropdown:hover {
+    color: #660032;
+    background-color: #EEECD6;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    margin-top: 12px;
+    background-color: #660032;
+    color: #EEECD7;
+    z-index: 1;
+    min-width: 100px;
+}
+
+
+.dropdown-content a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.dropdown-content a:hover {
+    background-color: #EEECD6;
+    color: #660032;
+}
+
+a.dlinks{
+    color: inherit;
+}
+
+a.phone{
+    color:#660032;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 150%;
+}
+
+img#bigimg{
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 30px;
+}
+
+div.container{
+    position: relative;
+
+}
+p.tex2{
+    color: #EEECD7;
+    position: absolute;
+    bottom: 0px;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-decoration: underline;
+}
+p.tex{
+    color: #EEECD7;
+    position: absolute;
+    bottom: 0px;
+    margin-left: 90px;
+    margin-right: 90px;
+    text-decoration: underline;
+}
+
+article {
+    grid-column: 1 / 4;
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+section {
+    grid-column: 1 / 2;
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 90px;
+}
+
+div.foot{
+    grid-column: 1 / 2;
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: auto auto;
+    color: #141310;
+}
+a.comments{
+    background-color: #660032;
+    color: #EEECD7;
+    padding: 5px;
+    text-decoration: none;
+}
+
+a.links{
+    color: #141310;
+}
+.comments:hover {
+    background-color: #720436;
+}
