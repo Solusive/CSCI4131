@@ -150,6 +150,11 @@ a.comments{
 a.links{
     color: #141310;
 }
+a.tlink{
+    color: inherit;
+    text-decoration: none;
+}
+
 .comments:hover {
     background-color: #720436;
 }
