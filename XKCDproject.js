@@ -5,8 +5,6 @@
             var minVal = parseInt(document.querySelector("#min").value);
             var maxVal = parseInt(document.querySelector("#max").value);
             var maxLen = parseInt(document.querySelector("#length").value);
-            console.log(minVal);
-            console.log(maxVal);
             if(maxVal >= minVal && maxLen >= maxVal){
             var columns = Math.floor(maxLen/maxVal);
             var tbl = document.querySelector("#tble");
