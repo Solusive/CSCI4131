@@ -1,0 +1,45 @@
+
+    html{
+    background: linear-gradient(56deg, #EEECD6 34%, #FAF9EF 60%);
+    font-family: "Verdana", Geneva, sans-serif;
+    font-size: 90%;
+    }
+    main {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    input[type=number]{
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+    } 
+
+    .odd {
+        color: #EEECD7;
+        background-color: black;
+    }
+    .even {
+        color: #EEECD7;
+        background-color: grey;
+    }
+
+
+    table#tble{
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    td{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .put{
+        padding-top: 20;
+    }
+    button{
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 70px;
+    }

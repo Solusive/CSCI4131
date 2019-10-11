@@ -1,0 +1,38 @@
+<html>
+<head>
+    <link rel="stylesheet" href="XKCDproject.css">
+</head>
+<body>
+    <main>
+    <h3> XKCD Password Generator</h3>
+    <h5> By Gavin Doebbert </h5>
+    <div style="display: inline-block; text-align: left;">
+    <div class="put">
+    <label for="min">Minimum Word Length</label>
+    <input type="number" max = "30" min = "0" value="4" id ="min" onchange="updateMin();"><br>
+</div>
+    <div class="put">
+    <label for="max">Maximum Word Length</label>
+    <input type="number" max = "30" min = "0" value="6" id ="max" onchange ="updateMax();"><br>
+    </div>
+    <div class="put">
+    <label for="length">Max Length</label>
+    <input type="number" id="length" min = "0" value = "18"><br>
+</div>
+<div class="put">
+    <input class="put" type="checkbox" id = "easy"> Easy Typing<br>
+    <input class="put" type="checkbox" id = "sub"> Number Substitutions<br>
+    </div>
+    </div>
+    <div>
+    <button onclick="createPassword(this);">Submit</button>
+    </div>
+    </main>
+    <table id="tble">
+    </table>
+
+   <script src="XKCDproject.js"> </script>
+
+</body>
+</html>
+
