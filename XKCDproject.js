@@ -21,12 +21,15 @@
 
         alert("sending the request");
 	    let config = {
-	    	credentials: 'include',
+	    	//credentials: 'include',
             method: 'POST',
             headers: {
-                "Content-Type": "text/plain"
+                "Content-Type": "text/plain",
+                //"Access-Control-Allow-Origin": "*",
+                //"Access-Control-Allow-Credentials": "*"
             },
-
+            //mode: 'no-cors',
+            //mode: 'cors',
             body: JSON.stringify(j)
             }
 
