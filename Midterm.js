@@ -74,6 +74,20 @@
             norm = u.responses[0].fullTextAnnotation.text;
         	}
         	catch(TypeError){
+                  norm = null;
+                  trans = null;
+                  coord = null;
+                  up = false;
+                  dupe = [];
+                 source = null;
+                 filex = 0;
+                 filey = 0;
+                var normphoto = document.querySelector("#nphoto");
+                normphoto.src = "https://www.transparenttextures.com/patterns/debut-light.png"
+                var base = document.querySelector("#container");
+                base.innerHTML = "";
+                var photo = document.createElement("img");
+                photo.src = "https://www.transparenttextures.com/patterns/debut-light.png";
                 if(up){
                 alert("File Error, try uploading a different photo");
                 }
@@ -248,7 +262,7 @@
         	let j = {
   			"q": obj,
   			"target": document.querySelector("#langto").value,
-  			"model": "base"
+  			//"model": "base"
 }
 
         //alert("sending the request");
