@@ -87,13 +87,16 @@
                 var base = document.querySelector("#container");
                 base.innerHTML = "";
                 var photo = document.createElement("img");
-                photo.src = "https://www.transparenttextures.com/patterns/debut-light.png";
                 if(up){
                 alert("File Error, try uploading a different photo");
                 }
                 else{
         		alert("Unable to access url, try a different image");
                 }
+                photo.width = normphoto.width;
+                photo.height = normphoto.height;
+                photo.src = "https://www.transparenttextures.com/patterns/debut-light.png";
+                base.appendChild(photo);
         		return;
         	}
             translate(norm);
@@ -179,7 +182,7 @@
             	var photo = document.createElement("img");
             	photo.width = normphoto.width;
             	photo.height = normphoto.height;
-            	photo.src = source
+            	photo.src = source;
             	base.appendChild(photo);
                 var widratio;
                 var hratio;
