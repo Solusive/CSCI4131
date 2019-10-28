@@ -9,7 +9,7 @@
         var filey = 0;
         
 
-
+        //communicates with google's vision API to extract text from an image
         async function ReadImage(obj) {
         //reset varialbes
         norm = null;
@@ -20,7 +20,10 @@
         source = null;
         filex = 0;
         filey = 0;
-
+        if(!validURL(document.querySelector("#min").value)){
+            alert("Invalid URL, please use a valid URL");
+            return;
+        }
 
         var normphoto = document.querySelector("#nphoto");
         source = document.querySelector("#min").value;
@@ -67,12 +70,20 @@
 		promise.catch( (err) => alert('Error getting prediction, details: ' + err) );
             }
 
+         //handles first promise
+        function readP(g) {;
+            var b = g.json();
+            b.then(h);
+        }
+
+        //handles second promise
          function h(g) {
          	var u = g;
             try{
             coord = u.responses[0].textAnnotations;
             norm = u.responses[0].fullTextAnnotation.text;
         	}
+            //if The server returns an invalid response this handles it and returns resets the page.
         	catch(TypeError){
                   norm = null;
                   trans = null;
@@ -102,14 +113,9 @@
             translate(norm);
         }
 
-        function readP(g) {;
-            var b = g.json();
-            b.then(h);
-        }
 
 
-
-
+        //communicates with google's translation api to translate the text
         async function translate(obj) {
         	let j = {
   			"q": obj,
@@ -133,21 +139,23 @@
 
             }
 
-
-        function s(g) {
-         	var u = g;
-            trans = u.data.translations[0].translatedText;
-            create();
-        }
-
+        //handles first promise from translate
         function readT(g) {
             var b = g.json();
             b.then(s);
         }
 
+        //handles second promise from translate
+        function s(g) {
+            var u = g;
+            trans = u.data.translations[0].translatedText;
+            create();
+        }
 
 
-           async function create(obj) {
+
+        //this function creates the html on the page
+        async function create(obj) {
            	await placetext();
             var tbl = document.querySelector("#tble");
             tbl.innerHTML = "";
@@ -174,6 +182,8 @@
             td.innerHTML = trans;
             }
 
+
+            //place text translates and places text over an image
             async function placetext(){
             	var normphoto = document.querySelector("#nphoto");
             	normphoto.src = source;
@@ -241,8 +251,8 @@
 				//written.innerHTML = coord[j].description;
 				translate2(written,coord[j].description);
 				if(coord[j].description.length > 30){
-				written.style.overflow = "scroll";
-				written.style.border = "1px solid black";
+				    written.style.overflow = "scroll";
+				    written.style.border = "1px solid black";
 				}
 
 			}
@@ -250,7 +260,9 @@
             }
 
 //code from stack exchange for retrieving an images original size. https://stackoverflow.com/questions/11442712/get-width-height-of-remote-image-from-url
-            function getMeta(url) {
+
+//This is used to get the original size of an image at a remote host 
+function getMeta(url) {
     return new Promise((resolve, reject) => {
         let img = new Image();
         img.onload = () => resolve(img);
@@ -260,7 +272,7 @@
 }
 
 
-
+        // similar to translate, but it also places translated text onto an image
         async function translate2(loc, obj) {
         	let j = {
   			"q": obj,
@@ -295,6 +307,8 @@
 
 
 //preview file function from https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL
+
+//this function loads a file into the webpage, it also prepares the data to send to an API
 function previewFile() {
   var preview = document.querySelector('#nphoto');
   var file    = document.querySelector('input[type=file]').files[0];
@@ -318,13 +332,33 @@ function previewFile() {
   }, false);
 
   if (file) {
+    if(!isFileImage(file)){
+        alert("Error file is not an image")
+        return;
+    }
     reader.readAsDataURL(file);
   }
 }
 
 
+//from https://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-a-url
+function validURL(str) {
+  var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+  return !!pattern.test(str);
+}
 
+//from http://roufid.com/javascript-check-file-image/
+function isFileImage(file) {
+    return file && file['type'].split('/')[0] === 'image';
+}
 
+//similar to the original, but this function is for uploaded files instead of urls
+//it uses the same helper functions as the original
 async function ReadImage2(obj) {
         norm = null;
         trans = null;
