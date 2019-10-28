@@ -21,7 +21,7 @@
         filex = 0;
         filey = 0;
         if(!validURL(document.querySelector("#min").value)){
-            alert("Invalid URL, please use a valid URL");
+            alert("Invalid URL: Please use a valid URL");
             return;
         }
 
@@ -333,7 +333,7 @@ function previewFile() {
 
   if (file) {
     if(!isFileImage(file)){
-        alert("Error file is not an image")
+        alert("Error: File is not an image")
         return;
     }
     reader.readAsDataURL(file);
