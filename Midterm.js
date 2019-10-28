@@ -7,7 +7,7 @@
         var source = null;
         var filex = 0;
         var filey = 0;
-        var data = null;
+        
 
         //communicates with google's vision API to extract text from an image
         async function ReadImage(obj) {
@@ -93,7 +93,6 @@
                  source = null;
                  filex = 0;
                  filey = 0;
-                 data = null;
                 var normphoto = document.querySelector("#nphoto");
                 normphoto.src = "https://www.transparenttextures.com/patterns/debut-light.png"
                 var base = document.querySelector("#container");
@@ -329,7 +328,7 @@ function previewFile() {
       if ((encoded.length % 4) > 0) {
         encoded += '='.repeat(4 - (encoded.length % 4));
       }
-      data = encoded;
+      ReadImage2(encoded);
   }, false);
 
   if (file) {
@@ -366,17 +365,12 @@ async function ReadImage2(obj) {
         coord = null;
         up = true;
 
-    if(data = null){
-        alert("Error: No File Selected")
-        return;
-    }
-
 
 let j = {
   "requests": [
     {
       "image": {
-        "content": data
+        "content": obj
        },
        "features": [
          {
