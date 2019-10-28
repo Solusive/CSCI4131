@@ -205,7 +205,7 @@
             	widratio = (img.width *1.0)/photo.width;
             	hratio = (img.height *1.0)/photo.height;
                 }
-            	for (var j = 0; j < coord.length; j++) {
+            	for (var j = 1; j < coord.length; j++) {
 
             	var x = 0;
             	var bool = -1;
@@ -215,7 +215,7 @@
 				var ymax = -1;
 
 				var list = coord[j].boundingPoly.vertices;
-				for (var i = 1; i < list.length; i++) {
+				for (var i = 0; i < list.length; i++) {
 	 			if (list[i].x < xmin){
 				 	xmin = list[i].x;
 				 }
