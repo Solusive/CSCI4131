@@ -215,7 +215,7 @@
 				var ymax = -1;
 
 				var list = coord[j].boundingPoly.vertices;
-				for (var i = 0; i < list.length; i++) {
+				for (var i = 1; i < list.length; i++) {
 	 			if (list[i].x < xmin){
 				 	xmin = list[i].x;
 				 }
