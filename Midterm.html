@@ -56,16 +56,17 @@
 
     <label for="min">Url of Photo to Translate</label><br><br>
     <input type="text" autofocus value = "https://i.stack.imgur.com/4Y7dJ.jpg" id ="min" onclick="this.value='';"><br><br>
-    <button onclick="ReadImage(this);">Translate Url</button><br><br>
+    <button onclick="ReadImage(this);">Translate Url</button>
 </div>
     <div class="put">
     <label for="load">Click Here to Upload an Image</label><br><br>
-    <input id = "load" align="center" type="file" onchange="previewFile()"><br><br>
+    <input  style="margin-left: 36%;" id = "load" align="center" type="file" onchange="previewFile()"><br>
+    <p id = "filename" style="font-size: 50%;""></p>
     </div>
     </main>
      </div>
      <div class = "col">
-        <h5 class = "banner" align="center" position = "static" width = "100%"> Translated Image </h5>
+        <h5 class = "banner" align="center" position = "static" width = "100%"> Translated Image <br> (Hover over boxes in image to see translation)</h5>
     <div id = "container">
     <img id="tphoto" width="100%" src = "https://www.transparenttextures.com/patterns/debut-light.png">
 </div>

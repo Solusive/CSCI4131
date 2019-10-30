@@ -20,6 +20,8 @@
         source = null;
         filex = 0;
         filey = 0;
+        document.querySelector('#filename').innerHTML = "";
+
         if(!validURL(document.querySelector("#min").value)){
             alert("Invalid URL: Please use a valid URL");
             return;
@@ -328,6 +330,8 @@ function previewFile() {
       if ((encoded.length % 4) > 0) {
         encoded += '='.repeat(4 - (encoded.length % 4));
       }
+      document.querySelector('#load').value = "";
+      document.querySelector('#filename').innerHTML = "UPLOADED FILE:    "+  file.name;
       ReadImage2(encoded);
   }, false);
 
