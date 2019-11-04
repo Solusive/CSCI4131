@@ -1,0 +1,86 @@
+<html>
+<head>
+    <link rel="stylesheet" href="term.css">
+</head>
+<body>
+        <div id = "col1" class = "col">
+    <h5 class = "banner" align="center" width = "100%"> Original Image </h5>
+    <img id="nphoto" width="100%" src = "https://www.transparenttextures.com/patterns/debut-light.png">
+</div>
+    <div  class = "col">
+    <main style="margin: 0px;  box-sizing: border-box;">
+    <h3  class = "intro"> Image Language Translation Using the <br>Google Vision and Google Translate APIs</h3>
+    <h5 class = "intro"> By Gavin Doebbert </h5>
+    <h3 >This app translates the writing/text in an image into another language. To get started, submit the url of an image and click translate, or upload a photo.</h3><br><br>
+
+    <div style="display: inline-block; text-align: center; margin: 0px;">
+    <div class="put">
+    <label for="langto">Output Language</label>
+    <select id="langto">
+        <option value="ar">(Arabic) العربية</option>
+        <option value="zh">(Chinese) 中文 汉语</option>
+        <option value="da">(Danish) Dansk</option>
+        <option value="en">(English) English</option>
+        <option value="fi">(Finnish) Suomi Kieli</option>
+        <option value="de">(German) Deutsch</option>
+        <option value="he">(Hebrew) עברית</option>
+        <option value="hi">(Hindi) हिन्दी हिंदी</option>
+        <option value="id">(Indonesian)  Bahasa Indonesia</option>
+        <option value="ga">(Irish) Gaeilge</option>
+        <option value="it">(Italian) Italiano</option>
+        <option value="ja">(Japanese) 日本語</option>
+        <option value="ko">(Korean) 한국어</option>
+        <option value="ku">(Kurdish) Kurdî کوردی</option>
+        <option value="la">(Latin) latine</option>
+        <option value="mn">(Mongolian) Монгол хэл</option>
+        <option value="ne">(Nepali) नेपाली</option>
+        <option value="no">(Norwegian) Norsk</option>
+        <option value="pt">(Portuguese) Português</option>
+        <option value="ru">(Russian) русский</option>
+        <option value="sd">(Sindhi) सिन्धी</option>
+        <option value="es">(Spanish) Español</option>
+        <option value="vi">(Vietnamese) Tiếng Việt</option>
+        <option value="zu">(Zulu) isiZulu</option>
+
+    </select>
+    </div>
+<div class="put">
+    <label for="type">Document Writing Style</label>
+    <select id="type">
+        <option value="TEXT_DETECTION">Typed</option>
+        <option value="DOCUMENT_TEXT_DETECTION">Handwritten</option>
+    </select>
+    </div>
+    </div><br><br>
+    <div class="put">
+
+    <label for="min">Url of Photo to Translate</label><br><br>
+    <input type="text" autofocus value = "https://i.stack.imgur.com/4Y7dJ.jpg" id ="min" onclick="this.value='';"><br><br>
+    <button onclick="ReadImage(this);">Translate Url</button>
+</div>
+    <div class="put">
+    <label for="load">Click Here to Upload an Image</label><br><br>
+    <input  style="margin-left: 36%;" id = "load" align="center" type="file" onchange="previewFile()"><br>
+    <p id = "filename" style="font-size: 50%;""></p>
+    </div>
+    </main>
+     </div>
+     <div class = "col">
+        <h5 class = "banner" align="center" position = "static" width = "100%"> Translated Image <br> (Hover over boxes in image to see translation)</h5>
+    <div id = "container">
+    <img id="tphoto" width="100%" src = "https://www.transparenttextures.com/patterns/debut-light.png">
+</div>
+</div>
+
+
+
+
+
+    <table id="tble">
+    </table>
+
+   <script src="term.js"> </script>
+
+</body>
+</html>
+
